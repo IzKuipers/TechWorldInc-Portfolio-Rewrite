@@ -1,0 +1,83 @@
+body {
+    background-color: #00000077;
+    color: white;
+    backdrop-filter: blur(20px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../img/wallpaper.png");
+}
+
+div.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+    animation: contentdiv-fadein-bottom-up forwards 2s;
+    animation-delay: 1s;
+    opacity: 0
+}
+
+div.content h1 {
+    margin: 0px;
+    animation: fadein forwards 1.5s;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+div.content p {
+    margin: 0px;
+    animation: fadein-subheader forwards 1.5s;
+    animation-delay: 2.5s;
+}
+
+div.content p.subheader {
+    opacity: 0.5;
+    opacity: 0;
+}
+
+@keyframes contentdiv-fadein-bottom-up {
+    from {
+        margin-top: 10%;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadein-subheader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
