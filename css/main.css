@@ -1,14 +1,37 @@
-html, body {
+@import url("./phone.css") (max-width:600px);
+@import url("./desktop.css") (min-width:600px);
+@import url("./darkMode.css");
+:root {
+    --bg: #fff;
+    --fg: #000;
+    --gradient-overlay-clr: #fffc;
+    --button-bg: #fffe;
+    --button-fg: var(--fg);
+    --button-hover-bg: rgba(199, 199, 199, 0.515);
+    --button-active-bg: rgba(169, 169, 169, 0.487);
+    --primary-bg-gradient-first-clr: blue;
+    --primary-bg-gradient-second-clr: deepskyblue;
+    --primary-bg-gradient-third-clr: skyblue;
+}
+
+html,
+body {
     font-family: "IBM Plex Sans", sans-serif;
     margin: 0px;
     padding: 0px;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(#fffc 0%, #fffc 100%),linear-gradient(to bottom right, blue 0%, deepskyblue 50%, skyblue 100%)
+    color: var(--fg);
+    background: linear-gradient(var(--gradient-overlay-clr) 0%, var(--gradient-overlay-clr) 100%), 
+    linear-gradient(to bottom right, var(--primary-bg-gradient-first-clr) 0%, var(--primary-bg-gradient-second-clr) 50%, var(--primary-bg-gradient-third-clr) 100%);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: 5px;
 }
 
@@ -17,41 +40,73 @@ p {
 }
 
 .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
     animation: slide-up-logo 1s 1s forwards;
     opacity: 0;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: 0 5px;
-    margin-top: -30px;
+    margin-top: -50px;
 }
 
 .header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
     animation: slide-up-header 1s 1.5s forwards;
     opacity: 0;
     margin-top: 70px;
-    margin-bottom:45px;
-    font-size: 35px;
+    margin-bottom: 45px;
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sub-header {
+    animation: slide-up-sub-header 1s 1.9s forwards;
+    opacity: 0;
+    margin: 0 5px;
+    margin-top: 110px;
+    font-weight: 100;
+    margin-bottom: 45px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+* {
+    outline: none !important;
+    user-select: none !important;
+    transition:background-color 0.3s, color 0.1s;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    color: var(--button-fg);
+    background-color: var(--button-bg);
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+button:active {
+    background-color: var(--button-active-bg);
+}
+
+button+button {
+    margin-left: 5px;
+}
+
+span.buttons {
+    animation: slide-up-buttons 1s 2.25s forwards;
+    opacity: 0;
+    margin: 0 5px;
+    margin-top: 140px;
+    margin-bottom: 45px;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.absolute-center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,20 +115,12 @@ p {
     -ms-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    animation: slide-up-sub-header 1s 1.9s forwards;
-    opacity: 0;
-    margin: 0 5px;
-    margin-top: 100px;
-    font-weight: 100;
-    margin-bottom:45px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
 }
 
 @keyframes slide-up-logo {
     from {
         opacity: 0;
-        top: calc(50% + 75px);
+        top: calc(50% + 100px);
     }
     to {
         opacity: 1;
@@ -103,7 +150,13 @@ p {
     }
 }
 
-* {
-    outline: none !important;
-    user-select: none !important;
+@keyframes slide-up-buttons {
+    from {
+        opacity: 0;
+        top: calc(50% + 20px);
+    }
+    to {
+        opacity: 1;
+        top: 50%;
+    }
 }
