@@ -1,21 +1,22 @@
 @import url("./phone.css") (max-width:600px);
 @import url("./desktop.css") (min-width:600px);
 @import url("./darkMode.css");
-:root {
-    --bg: #fff;
-    --fg: #000;
-    --gradient-overlay-clr: #fffc;
-    --button-bg: #fffe;
-    --button-fg: var(--fg);
-    --button-hover-bg: rgba(199, 199, 199, 0.515);
-    --button-active-bg: rgba(169, 169, 169, 0.487);
-    --primary-bg-gradient-first-clr: blue;
-    --primary-bg-gradient-second-clr: deepskyblue;
-    --primary-bg-gradient-third-clr: skyblue;
+@media screen and (prefers-color-scheme: light) {
+    :root {
+        --bg: #fff;
+        --fg: #000;
+        --gradient-overlay-clr: #fffc;
+        --button-bg: #0000;
+        --button-fg: var(--fg);
+        --button-hover-bg: #0002;
+        --button-active-bg: #003;
+        --primary-bg-gradient-first-clr: blue;
+        --primary-bg-gradient-second-clr: deepskyblue;
+        --primary-bg-gradient-third-clr: skyblue;
+    }
 }
 
-html,
-body {
+html, body {
     font-family: "IBM Plex Sans", sans-serif;
     margin: 0px;
     padding: 0px;
@@ -23,15 +24,10 @@ body {
     height: 100%;
     overflow: hidden;
     color: var(--fg);
-    background: linear-gradient(var(--gradient-overlay-clr) 0%, var(--gradient-overlay-clr) 100%), 
-    linear-gradient(to bottom right, var(--primary-bg-gradient-first-clr) 0%, var(--primary-bg-gradient-second-clr) 50%, var(--primary-bg-gradient-third-clr) 100%);
+    background: linear-gradient(var(--gradient-overlay-clr) 0%, var(--gradient-overlay-clr) 100%), linear-gradient(to bottom right, var(--primary-bg-gradient-first-clr) 0%, var(--primary-bg-gradient-second-clr) 50%, var(--primary-bg-gradient-third-clr) 100%);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
     margin: 5px;
 }
 
@@ -60,8 +56,7 @@ p {
 .sub-header {
     animation: slide-up-sub-header 1s 1.9s forwards;
     opacity: 0;
-    margin: 0 5px;
-    margin-top: 110px;
+    
     font-weight: 100;
     margin-bottom: 45px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -71,7 +66,7 @@ p {
 * {
     outline: none !important;
     user-select: none !important;
-    transition:background-color 0.3s, color 0.1s;
+    transition: background-color 0.3s, color 0.1s, background 0.3s;
 }
 
 button {
@@ -81,6 +76,10 @@ button {
     background-color: var(--button-bg);
     padding: 5px 10px;
     margin-top: 5px;
+}
+
+button * {
+    vertical-align: middle;
 }
 
 button:hover {
@@ -99,7 +98,7 @@ span.buttons {
     animation: slide-up-buttons 1s 2.25s forwards;
     opacity: 0;
     margin: 0 5px;
-    margin-top: 140px;
+    margin-top: 145px;
     margin-bottom: 45px;
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -115,6 +114,44 @@ span.buttons {
     -ms-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+}
+
+span.material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+div.header-bar {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+div.header-bar button {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border-bottom: #0000 0.2em solid;
+    border-radius: 0;
+    padding-bottom:5px
+}
+
+div.header-bar button+button {
+    margin-left:2em;
+}
+
+div.header-bar button:hover {
+    color:deepskyblue;
+}
+
+div.header-bar button:active {
+    color: dodgerblue;
+}
+
+div.header-bar button.selected {
+    border-bottom: dodgerblue 0.2em solid;
+    padding-bottom:5px;
+    color:dodgerblue
 }
 
 @keyframes slide-up-logo {

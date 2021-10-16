@@ -1,8 +1,14 @@
 .header {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .sub-header {
-    font-size: 1.2em;
+    font-size: 1em;
+    margin-top: 80px;
+    margin: 98px 5px;
 
+}
+
+.header-bar {
+    text-align: center;
 }
