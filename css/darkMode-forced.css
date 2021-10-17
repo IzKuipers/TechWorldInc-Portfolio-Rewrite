@@ -1,0 +1,12 @@
+:root {
+    --bg: #000;
+    --fg: #fff;
+    --gradient-overlay-clr: #000c;
+    --button-bg: #0000;
+    --button-fg: var(--fg);
+    --button-hover-bg: #0002;
+    --button-active-bg: #003;
+    --primary-bg-gradient-first-clr: blue;
+    --primary-bg-gradient-second-clr: deepskyblue;
+    --primary-bg-gradient-third-clr: skyblue;
+}
