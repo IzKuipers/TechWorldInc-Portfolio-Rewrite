@@ -2,7 +2,7 @@
 @import url("./desktop.css") (min-width:600px);
 @import url("./darkMode.css");
 @media screen and (prefers-color-scheme: light) {
-    :root {
+     :root {
         --bg: #fff;
         --fg: #000;
         --gradient-overlay-clr: #fffc;
@@ -16,7 +16,8 @@
     }
 }
 
-html, body {
+html,
+body {
     font-family: "IBM Plex Sans", sans-serif;
     margin: 0px;
     padding: 0px;
@@ -27,8 +28,13 @@ html, body {
     background: linear-gradient(var(--gradient-overlay-clr) 0%, var(--gradient-overlay-clr) 100%), linear-gradient(to bottom right, var(--primary-bg-gradient-first-clr) 0%, var(--primary-bg-gradient-second-clr) 50%, var(--primary-bg-gradient-third-clr) 100%);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: 5px;
+    margin-left:0;
 }
 
 p {
@@ -56,17 +62,10 @@ p {
 .sub-header {
     animation: slide-up-sub-header 1s 1.9s forwards;
     opacity: 0;
-    
     font-weight: 100;
     margin-bottom: 45px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-}
-
-* {
-    outline: none !important;
-    user-select: none !important;
-    transition: background-color 0.3s, color 0.1s, background 0.3s;
 }
 
 button {
@@ -126,7 +125,7 @@ div.header-bar {
     width: calc(100% - 20px);
     padding: 10px;
     opacity: 0;
-    margin-top:-20px;
+    margin-top: -20px;
     animation: header-bar 1s 2s forwards;
 }
 
@@ -136,15 +135,15 @@ div.header-bar button {
     padding: 0;
     border-bottom: #0000 0.2em solid;
     border-radius: 0;
-    padding-bottom:5px
+    padding-bottom: 5px
 }
 
 div.header-bar button+button {
-    margin-left:2em;
+    margin-left: 2em;
 }
 
 div.header-bar button:hover {
-    color:deepskyblue;
+    color: deepskyblue;
 }
 
 div.header-bar button:active {
@@ -153,7 +152,7 @@ div.header-bar button:active {
 
 div.header-bar button.selected {
     border-bottom: dodgerblue 0.2em solid;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
 
 @keyframes slide-up-logo {
@@ -203,36 +202,39 @@ div.header-bar button.selected {
 @keyframes header-bar {
     from {
         opacity: 0;
-        margin-top:-20px;
+        margin-top: -20px;
     }
-
     to {
         opacity: 1;
-        margin-top:0;
+        margin-top: 0;
     }
 }
 
-*,*::before,*::after {
-    transition:all 0.3s;
+*,
+*::before,
+*::after {
+    outline: none !important;
+    user-select: none !important;
+    transition: background 0.3s, color 0.1s, background-color 0.3s, opacity 0.3s,border-bottom 0.3s;
 }
 
 input[type="checkbox"]#darkModeSwitch {
     -webkit-appearance: none;
-    float:right;
-    margin-top:8px;
-    margin-right:8px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 8px;
 }
 
 input[type="checkbox"]#darkModeSwitch::after {
-    content:"light_mode";
-    width:inherit;
-    height:inherit;
+    content: "light_mode";
+    width: inherit;
+    height: inherit;
     vertical-align: middle;
-    padding-left:3px;
+    padding-left: 3px;
     text-align: center;
     font-family: "Material Icons", sans-serif;
-    font-size:20px; 
-    color:var(--fg);
+    font-size: 20px;
+    color: var(--fg);
 }
 
 input[type="checkbox"]#darkModeSwitch:checked::after {
@@ -241,7 +243,7 @@ input[type="checkbox"]#darkModeSwitch:checked::after {
 
 @media screen and (prefers-color-scheme:dark) {
     input[type="checkbox"]#darkModeSwitch {
-        display:none;
+        display: none;
     }
 }
 
@@ -258,5 +260,51 @@ button.header-bar-logo.selected {
 }
 
 div#mainPage {
-    padding:20px;
+    padding: 20px;
+}
+
+div.slide-in-top {
+    animation: div-slide-in-left 1s forwards;
+}
+
+@keyframes div-slide-in-left {
+    from {
+        opacity: 0;
+        transform:translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform:initial;
+    }
+}
+
+div.main-frame {
+    overflow: auto;
+    max-height: calc(100vh - 116px);
+}
+
+
+::-webkit-scrollbar-track {
+    background: #fff2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff8;
+}
+
+a {
+    color:deepskyblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:lightskyblue;
+}
+
+a:active {
+    color:deepskyblue
 }
