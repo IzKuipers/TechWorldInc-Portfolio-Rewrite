@@ -219,6 +219,8 @@ div.header-bar button.selected {
 input[type="checkbox"]#darkModeSwitch {
     -webkit-appearance: none;
     float:right;
+    margin-top:8px;
+    margin-right:8px;
 }
 
 input[type="checkbox"]#darkModeSwitch::after {
@@ -235,4 +237,26 @@ input[type="checkbox"]#darkModeSwitch::after {
 
 input[type="checkbox"]#darkModeSwitch:checked::after {
     content: "dark_mode";
+}
+
+@media screen and (prefers-color-scheme:dark) {
+    input[type="checkbox"]#darkModeSwitch {
+        display:none;
+    }
+}
+
+button.header-bar-logo {
+    opacity: 1;
+}
+
+button.header-bar-logo:hover {
+    opacity: 0.5;
+}
+
+button.header-bar-logo.selected {
+    border-bottom: none !important;
+}
+
+div#mainPage {
+    padding:20px;
 }

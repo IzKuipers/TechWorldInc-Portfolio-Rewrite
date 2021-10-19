@@ -24,23 +24,21 @@
 
 <body>
     <div class="header-bar">
-        <button>
+        <button class="header-bar-logo" onclick="switchPage('/page/home.html',this)">
             <img src="android-chrome-256x256.png" height="50px">
         </button>
-        <button>
+        <button onclick="switchPage('/page/projects.html',this);">
             <span class="material-icons">playlist_add_check</span>
             <span>PROJECTS</span>
         </button>
-        <button>
+        <button onclick="switchPage('/page/about.html',this);">
             <span class="material-icons">info</span>
             <span>ABOUT</span>
         </button>
         <input type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode();">
     </div>
-    <div class="homepage-center-logo">
-        <img class="absolute-center logo" src="android-chrome-256x256.png">
-        <h1 class="absolute-center header">TechWorldInc</h1>
-        <p class="absolute-center sub-header">Hobbyist Developer</p>
+    <div id="mainPage">
+
     </div>
 </body>
 

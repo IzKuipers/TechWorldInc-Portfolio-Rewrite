@@ -1,11 +1,17 @@
-async function switchPage(pageFile) {
+async function switchPage(pageFile,buttonNode) {
+    let outp = document.getElementById("mainPage");
+    let navb = document.querySelectorAll("div.header-bar > button");
     let data = await fetch(pageFile).then(response => response.text()).then(text => {
         return text;
-    }).catch(() => {
-        return "<div class='centered-absolute'><h1>Page Not Found</h1><p>The requested page file cannot be opened.</p></div>";
     });
 
-    console.log(data);
+    outp.innerHTML = data;
+
+    for (let i=0;i<navb.length;i++) {
+        navb[i].classList.remove("selected");
+    }
+
+    buttonNode.classList.add("selected");
 }
 
-switchPage("index.html");
+switchPage("/page/home.html");
