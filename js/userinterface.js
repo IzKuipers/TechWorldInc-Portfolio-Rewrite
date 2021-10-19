@@ -22,4 +22,4 @@ async function switchPage(pageFile,buttonNode) {
     }
 }
 
-switchPage(urlArgument.get('url') || "/page/home.html");
+switchPage(urlArgument.get('url') || "page/home.html");
