@@ -212,6 +212,27 @@ div.header-bar button.selected {
     }
 }
 
-* {
+*,*::before,*::after {
     transition:all 0.3s;
+}
+
+input[type="checkbox"]#darkModeSwitch {
+    -webkit-appearance: none;
+    float:right;
+}
+
+input[type="checkbox"]#darkModeSwitch::after {
+    content:"light_mode";
+    width:inherit;
+    height:inherit;
+    vertical-align: middle;
+    padding-left:3px;
+    text-align: center;
+    font-family: "Material Icons", sans-serif;
+    font-size:20px; 
+    color:var(--fg);
+}
+
+input[type="checkbox"]#darkModeSwitch:checked::after {
+    content: "dark_mode";
 }
