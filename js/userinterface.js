@@ -26,5 +26,4 @@ async function switchPage(pageFile, buttonNode) {
     }
 }
 
-//switchPage(urlArgument.get('url') || "page/home.html");
-switchPage("page/projects.html",document.querySelectorAll("div.header-bar > button")[1]);
+switchPage(urlArgument.get('url') || "page/home.html");

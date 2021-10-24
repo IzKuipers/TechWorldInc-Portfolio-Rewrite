@@ -12,7 +12,6 @@
     text-align: center;
 }
 
-::-webkit-scrollbar {
-    width: 2.5px;
-    height:2.5px;
+.header-bar-button-descr {
+    display:none;
 }

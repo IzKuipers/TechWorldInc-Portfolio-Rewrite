@@ -261,6 +261,7 @@ button.header-bar-logo.selected {
 
 div#mainPage {
     padding: 20px;
+    padding-top:0;
 }
 
 div.slide-in-top {
@@ -280,7 +281,7 @@ div.slide-in-top {
 
 div.main-frame {
     overflow: auto;
-    max-height: calc(100vh - 116px);
+    max-height: calc(100vh - 79px);
 }
 
 
@@ -307,4 +308,12 @@ a:hover {
 
 a:active {
     color:deepskyblue
+}
+
+div.projectDiv {
+    background-color:var(--button-hover-bg);
+    border-radius: 10px;
+    padding:10px 20px;
+    margin-bottom:10px;
+    backdrop-filter: opacity(0.5);
 }

@@ -10,9 +10,21 @@
 
 ::-webkit-scrollbar {
     width: 5px;
-    height:5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff8;
 }
 
 div.projectDiv {
-    width:600px;
+    width: 600px;
 }
